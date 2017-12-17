@@ -1,0 +1,17 @@
+{
+  "name": "handless",
+  "version": "1.0.0",
+  "description": "handless image from baidu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "handless"
+  ],
+  "author": "Lcoder",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^0.13.0"
+  }
+}
