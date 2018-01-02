@@ -1,4 +1,5 @@
 
 /download/*.jpg
 /download/*.png
+/download/*.pdf
 /node_modules/
