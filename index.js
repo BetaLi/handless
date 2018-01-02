@@ -9,8 +9,8 @@ const dir = require("./config/default");
     console.log("Go to baidu image.");
 
     await page.setViewport({
-        width:1920,
-        height:1500,
+        width:1600,
+        height:1000,
     });
     console.log("setView Page done.");
 
