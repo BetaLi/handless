@@ -3,4 +3,5 @@
 /download/*.png
 /download/*.pdf
 /download/*.txt
+/download/*.md
 /node_modules/

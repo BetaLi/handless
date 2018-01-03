@@ -11,11 +11,11 @@ const fs = require('fs');
 
     await page.setViewport({
         width:1920,
-        height:3080
+        height:5080
     });
     console.log("set Viewport done.");
 
-    const s_def = "盗墓小说";
+    const s_def = "前端开发";
     await page.type("#kw",s_def);
     await page.click("#su");
     await page.waitFor(2000);  //必须等待，否则浏览器不能正确刷新页面。
@@ -24,6 +24,7 @@ const fs = require('fs');
     const file_pdf = path.join(dir.imgDir,`${Date.now()}.pdf`);
     const file_png = path.join(dir.imgDir,`${Date.now()}.png`);
     const file_txt = path.join(dir.imgDir,`${Date.now()}.txt`);
+    const file_md = path.join(dir.imgDir,`${Date.now()}.md`);
 
     await page.pdf({
             path:file_pdf,
@@ -45,6 +46,12 @@ const fs = require('fs');
         if (err) throw err;
         console.log('The "data" was appended to file!');
     })});
+
+    const writer = fs.createWriteStream(file_md,(err)=>{if(err) throw err;});
+    text_content.map(text=>writer.write(text+"\n\n",(err)=>{
+        if(err) throw err;
+        console.log("mdFile has download.");
+    }));
 
    await browser.close();
 })();
