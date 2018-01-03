@@ -1,1 +1,0 @@
-{"dependencies":[{"name":"path","loc":{"line":1,"column":21}}],"generated":{"js":"var __dirname = \"A:\\\\Users\\\\Lcoder\\\\Desktop\\\\WebProject\\\\handless\\\\config\";\nconst path = require(\"path\");\r\n\r\nmodule.exports = {\r\n    imgDir: path.resolve(__dirname,\"../download\")\r\n};"},"hash":"1f81ed7c54759a4b7dfcaf87b90de6ea"}

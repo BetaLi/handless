@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
 const dir = require('./config/default');
+const fs = require('fs');
 
 (async ()=>{
     const browser = await puppeteer.launch();
@@ -22,6 +23,7 @@ const dir = require('./config/default');
 
     const file_pdf = path.join(dir.imgDir,`${Date.now()}.pdf`);
     const file_png = path.join(dir.imgDir,`${Date.now()}.png`);
+    const file_txt = path.join(dir.imgDir,`${Date.now()}.txt`);
 
     await page.pdf({
             path:file_pdf,
@@ -38,8 +40,11 @@ const dir = require('./config/default');
         const href = anchor.getAttribute("href");
         return `${title}---${href}`;
     }));
-    console.log("Find "+`${text_content.length}`+" result.");
-    text_content.map(text=>console.log(text));
+
+    text_content.map(text=>{fs.appendFile(file_txt, text+"\n", (err) => {
+        if (err) throw err;
+        console.log('The "data" was appended to file!');
+    })});
 
    await browser.close();
 })();
