@@ -42,6 +42,7 @@ const fs = require('fs');
         return `${title}---${href}`;
     }));
 
+
     text_content.map(text=>{fs.appendFile(file_txt, text+"\n", (err) => {
         if (err) throw err;
         console.log('The "data" was appended to file!');
